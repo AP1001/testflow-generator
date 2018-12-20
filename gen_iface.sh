@@ -7,10 +7,10 @@ gen_iface(){
 cat >>${OUTPUT_F} <<EOL
 .PHONY: test_$1
 test_$1:
-	make -f basic.mk hint CONTENT="make $1"
-	make -C ${TEST_PROJ} $1
-	make -C ${TEST_PROJ} status
-	make -f basic.mk confirm
+	make -s -f basic.mk hint CONTENT="make $1"
+	make -C \${TEST_PROJ} $1
+	make -C \${TEST_PROJ} status
+	make -s -f basic.mk confirm
 EOL
 }
 

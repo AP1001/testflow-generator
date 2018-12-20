@@ -3,7 +3,7 @@ gen_sce(){
 cat>> ${OUTPUT_F}<<EOL
 .PHONY: test_$1
 test_$1:
-	make -f basic.mk hint CONTENT="make $1"
+	make -s -f basic.mk hint CONTENT="make $1"
 EOL
 
 name=$2[@]
