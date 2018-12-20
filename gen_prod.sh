@@ -1,6 +1,7 @@
 #!/bin/bash
 source prod.env
-OUTPUT_F=./function_prod.mk
+source lib.sh
+OUTPUT_F=./output/prod.mk
 
 for s in ${scenarios[@]}
 do 

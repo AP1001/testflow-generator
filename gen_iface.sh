@@ -1,10 +1,10 @@
 #!/bin/bash
 source .env
 source interface.env
-
+OUTPUT_F=./output/Makefile
 # Generate Makefile
 gen_iface(){
-cat >>./Makefile <<EOL
+cat >>${OUTPUT_F} <<EOL
 .PHONY: test_$1
 test_$1:
 	make -f basic.mk hint CONTENT="make $1"
@@ -20,5 +20,5 @@ do
 done
 
 
-cat ./Makefile
+cat ${OUTPUT_F}
 

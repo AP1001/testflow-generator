@@ -1,7 +1,7 @@
 #!/bin/bash
 source dev.env
 source lib.sh
-OUTPUT_F=./dev.mk
+OUTPUT_F=./output/dev.mk
 
 for s in ${scenarios[@]}
 do 
