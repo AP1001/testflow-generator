@@ -1,19 +1,19 @@
 # README
 * update interfaces in interface.env
-* Update scenarios for development in dev.env
-* Update scenarios for production in prod.env
+* Update scenarios test flow for development in dev.env
+* Update scenarios test flow for production in prod.env
 
 * Generate Makefile
 ```
-make gen_iface.sh
+./gen_iface.sh
 ```
 
 * Generate dev.mk for development test
 ```
-make gen_dev.mk
+./gen_dev.mk
 ```
 
 * Generate prod.mk for production test
 ```
-make gen_prod.mk
+./gen_prod.mk
 ```
