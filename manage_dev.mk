@@ -48,8 +48,9 @@ clean_pkg:
 	make -f build_dev_pkg.mk status 
 
 clean_dev_env_x86: clean_image_x86 clean_pkg 
-
+	make -f basic.mk set_arch ARCH=x86
 clean_dev_env_armv6: clean_image_armv6 clean_pkg
+	make -f basic.mk set_arch ARCH=armv6
 
 status: 
 	ls ${BUILD_PKG} || true

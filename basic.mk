@@ -36,7 +36,10 @@ set_mod:
 read_mod:
 	printenv TESTMODE
 
-
+.PHONY: set_arch 
+set_arch:
+	sed -i '/export TEST_ARCH/c\export TEST_ARCH=${ARCH}' .env
+	cat ${LIB} | grep "export TEST_ARCH"
 
 
 .PHONY: hint confirm re_boot
