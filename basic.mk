@@ -16,16 +16,16 @@ rm_download:
 test_integrity:
 	md5sum -c ${PROJECT}-testflow-${PROJ_VERSION}.md5
 
-.PHONY: config read_config  
-config: 
+.PHONY: set_proj read_proj
+set_proj: 
 	sed -i '/TEST_PROJ/c\export TEST_PROJ=${TEST_PROJ}' ${LIB}
 
 
-read_config:
+read_proj:
 	cat ${LIB} | grep "TEST_PROJ"
 
-.PHONY: reset_config
-reset_config:
+.PHONY: reset_proj
+reset_proj:
 	sed -i '/TEST_PROJ/c\export TEST_PROJ=../' ${LIB}
 	sed -i '/TESTMODE/c\export TESTMODE=dev' ${LIB}
 	cat ${LIB}
@@ -35,6 +35,18 @@ set_mod:
 	sed -i '/TESTMODE/c\export TESTMODE=${TESTMODE}' ${LIB}
 read_mod:
 	printenv TESTMODE
+
+
+.PHONY: gen_proj_conf del_proj_conf read_proj_conf
+gen_proj_conf:
+	cd ${TEST_PROJ}/deployment/dnsmasq-confgenerator && python3 -m confgenerator.cli -f ${TEST_PROJ}/deployment/dnsmasq-confgenerator/dnsmasq-info.yml -d ${PWD}/dnsconf
+
+read_proj_conf:
+	ls dnsconf
+
+del_proj_conf:
+	rm -rf dnsconf
+
 
 
 .PHONY: hint confirm re_boot
