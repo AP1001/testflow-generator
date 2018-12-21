@@ -39,7 +39,7 @@ read_mod:
 
 .PHONY: gen_proj_conf del_proj_conf read_proj_conf
 gen_proj_conf:
-	cd ${TEST_PROJ}/deployment/dnsmasq-confgenerator && python3 -m confgenerator.cli -f ${TEST_PROJ}/deployment/dnsmasq-confgenerator/dnsmasq-info.yml -d ${PWD}/dnsconf
+	cd ${TEST_PROJ}/../dnsmasq-confgenerator && python3 -m confgenerator.cli -f ${TEST_PROJ}/../dnsmasq-confgenerator/dnsmasq-info.yml -d ${PWD}/dnsconf
 
 read_proj_conf:
 	ls dnsconf
