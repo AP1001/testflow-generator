@@ -1,4 +1,5 @@
 #!make
+include .env
 
 .PHONY: gen_proj_conf del_proj_conf read_proj_conf
 gen_proj_conf:
@@ -11,6 +12,10 @@ read_proj_conf:
 del_proj_conf:
 	rm -rf dnsconf
 
+.PHONY: set_img_pkg
+set_img_pkg:
+	sed -i '/IMG_PKG/c\export IMG_PKG=${PROJECT}-imageAPI-${TEST_ARCH}' .env
+	cat .env | grep "export IMG_PKG"
 
 
 
