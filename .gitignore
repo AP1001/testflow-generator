@@ -4,3 +4,4 @@ prod.mk
 output
 build_pkg
 dnsconf
+.env.dns

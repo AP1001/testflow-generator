@@ -44,6 +44,7 @@ build_dev_env_armv6: build_image_armv6 build_imgAPI_armv6 build_confgen status
 
 clean_pkg:
 	rm -rf ${BUILD_PKG} || true
+	rm -rf dnsconf || true
 	make -f build_dev_pkg.mk status 
 
 clean_dev_env_x86: clean_image_x86 clean_pkg 
@@ -52,6 +53,7 @@ clean_dev_env_armv6: clean_image_armv6 clean_pkg
 
 status: 
 	ls ${BUILD_PKG} || true
+	ls dnsconf || true
 	docker images | grep ${PROJECT}
 
 
