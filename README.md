@@ -1,5 +1,6 @@
 # README
-### Update `PROJ_VERSION` `PROJECT`  in .env, take dnsmasq as an example
+### Update configuration files
+* Update `PROJ_VERSION` `PROJECT`  in .env, take dnsmasq as an example
 ```
 export TEST_ARCH=
 export TEST_PROJ=
@@ -10,9 +11,9 @@ export PROJECT=dnsmasq
 export PAK_SEQ=${PROJECT}-confgenerator-${PROJ_VERSION} ${PROJECT}-imageAPI-armv6-${PROJ_VERSION} ${PROJECT}-imageAPI-x86-${PROJ_VERSION}
 export IMG_PKG=${BUILD_PKG}/${PROJECT}-imageAPI-${TEST_ARCH}
 ```
-### update interfaces in interface.env
-### Update scenarios test flow for development in dev.env
-### Update scenarios test flow for production in prod.env, you probably need add a makfile to do functionality test in this step, take dns as an example
+* update interfaces in interface.env
+* Update scenarios test flow for development in dev.env
+* Update scenarios test flow for production in prod.env, you probably need add a makfile to do functionality test in this step, take dns as an example
 ```
 #!make
 .PHONY: ns_lookup
