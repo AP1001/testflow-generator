@@ -37,16 +37,6 @@ read_mod:
 	printenv TESTMODE
 
 
-.PHONY: gen_proj_conf del_proj_conf read_proj_conf
-gen_proj_conf:
-	cd ${TEST_PROJ}/../dnsmasq-confgenerator && python3 -m confgenerator.cli -f ${TEST_PROJ}/../dnsmasq-confgenerator/dnsmasq-info.yml -d ${PWD}/dnsconf
-
-read_proj_conf:
-	ls dnsconf
-
-del_proj_conf:
-	rm -rf dnsconf
-
 
 
 .PHONY: hint confirm re_boot

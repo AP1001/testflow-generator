@@ -8,11 +8,17 @@ cat >>${OUTPUT_F} <<EOL
 .PHONY: test_${1%% *}
 test_${1%% *}:
 	make -s -f basic.mk hint CONTENT="make ${1%% *}"
-	make -C \${TEST_PROJ} $1
-	make -C \${TEST_PROJ} status
+	make -C \${IMG_PKG} $1
+	make -C \${IMG_PKG} status NAME=${TEST_NAME}
 	make -s -f basic.mk confirm
 EOL
 }
+
+cat >>${OUTPUT_F} <<EOL
+#!make
+include .env
+EOL
+
 
 for i in "${iface[@]}"
 do

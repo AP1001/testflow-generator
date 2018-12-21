@@ -2,3 +2,5 @@ Makefile
 dev.mk
 prod.mk
 output
+build_pkg
+dnsconf

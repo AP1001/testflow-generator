@@ -5,6 +5,7 @@ mkdir output
 ./gen_dev.sh
 ./gen_prod.sh
 cp basic.mk output
+cp build_dev_pkg.mk output
 cp ns_lookup.mk output 
 cp .env output
 ls -al output
