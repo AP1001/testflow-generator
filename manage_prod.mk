@@ -1,16 +1,17 @@
 #!make
 include .env
+CONF_DIR=projconf
 
 .PHONY: gen_proj_conf del_proj_conf read_proj_conf
 gen_proj_conf:
-	cd dnsmasq-confgenerator && python3 -m confgenerator.cli -f ${PWD}/dnsmasq-info.yml -d ${PWD}/dnsconf
-	ls dnsconf
+	cd ${PROJECT}-confgenerator && python3 -m confgenerator.cli -f ${PWD}/info.yml -d ${PWD}/${CONF_DIR}
+	ls ${CONF_DIR}
 
 read_proj_conf:
-	ls dnsconf
+	ls ${CONF_DIR}
 
 del_proj_conf:
-	rm -rf dnsconf
+	rm -rf ${CONF_DIR}
 
 .PHONY: set_img_pkg
 set_img_pkg:
